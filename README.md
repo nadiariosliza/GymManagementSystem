@@ -1,5 +1,19 @@
 # SQL Gym Management System: A Data Analytics Project
-A comprehensive project to design, implement, and analyze a relational database for a Gym Management System. This project demonstrates skills in database design, SQL (DDL, DML, DQL), data integrity enforcement, and business intelligence analysis using a realistic gym scenario.
+This project presents the design, implementation, and analysis of a relational database for a Gym Management System (GMS), developed as part of a Data Analytics Master's program. It showcases skills in database design, SQL (DDL, DML, DQL), data integrity enforcement, and business intelligence analysis within a realistic business scenario.
+
+The GMS database was built to improve operational efficiency, streamline core functions, and provide data-driven insights for strategic decision-making. Key components include membership management, trainer scheduling, class bookings, equipment maintenance, and financial tracking—offering a scalable and structured foundation for gym operations.
+
+Using DDL, DML, and DQL, the system enables:
+- Seamless data management
+- Business intelligence queries (e.g., revenue and attendance analysis)
+- Trainer and class performance evaluation
+
+The schema adheres to normalization principles to reduce redundancy and enforce data accuracy through well-defined constraints. Data population involved bulk inserts, CSV imports, and AI-assisted data generation to simulate realistic operations. Advanced SQL techniques—such as indexing and window functions—were applied to optimize query performance.
+
+To enhance this project’s analytical and predictive capabilities, future improvements include:
+- Populating the database with more historical and real-world data to better simulate edge cases and refine constraints
+- Implementing dashboards for interactive visualizations (e.g., Power BI or Tableau)
+- Developing machine learning models such as **logistic regression for churn analysis**, to identify at-risk members and inform retention strategies
 
 ## Table of Contents
 
@@ -113,6 +127,7 @@ HAVING DATEDIFF(CURRENT_DATE, MAX(a.AttendanceDate)) > 30
 
 ### Advanced Analytical Applications
 To maximize the value of the collected data, the project proposes two master tables designed for predictive modeling:  
+
 **1. Regression Analysis for Revenue Prediction:** A master table was designed to aggregate monthly metrics (membership counts by type, special class bookings, total attendance) to serve as features for regression model aimed at forecasting future revenue.    
 **Generated SQL:**
 ```sql
