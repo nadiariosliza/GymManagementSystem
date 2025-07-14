@@ -1,0 +1,22 @@
+INSERT INTO Equipment (EquipmentName, PurchaseDate, LastMaintenance)
+VALUES
+('Treadmill', '2022-01-01', '2023-09-01'),
+('Elliptical', '2022-02-01', '2023-08-01'),
+('Stationary Bike', '2022-03-01', '2023-07-01'),
+('Rowing Machine', '2022-04-01', '2023-06-01'),
+('Dumbbells', '2022-05-01', '2023-05-01'),
+('Barbell', '2022-06-01', '2023-04-01'),
+('Kettlebell', '2022-07-01', '2023-03-01'),
+('Bench Press', '2022-08-01', '2023-02-01'),
+('Leg Press', '2022-09-01', '2023-01-01'),
+('Cable Machine', '2022-10-01', '2022-12-01'),
+('Smith Machine', '2023-11-15', '2024-11-01'),
+('Hack Squat Machine', '2023-12-10', '2024-10-10'),
+('Pec Deck Machine', '2024-01-05', '2024-09-15'),
+('Lat Pulldown Machine', '2024-02-20', '2024-08-20'),
+('Leg Curl Machine', '2024-03-12', '2024-07-12'),
+('Seated Calf Raise', '2024-04-08', '2024-06-10'),
+('Assault AirBike', '2024-05-25', NULL),
+('Battle Ropes', '2024-06-18', NULL),
+('Vertical Climber', '2024-07-07', NULL),
+('Sled Push Machine', '2024-08-30', NULL);
