@@ -46,7 +46,7 @@ The GMS is built on a structured relational database that ensures efficient data
 ### ER Diagram
 The following Entity-Relationship diagram illustrates the database schema, including all tables and their relationships.
 
-<img src="Diagram.jpg" alt="ER Diagram" width="50%" />
+<img src="Diagram.jpg" alt="ER Diagram" width="80%" />
 
 ### Schema Overview
 The database consists of 13 interconnected tables designed to cover all core gym operations:
