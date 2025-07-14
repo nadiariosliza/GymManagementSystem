@@ -151,6 +151,12 @@ LEFT JOIN SpecialClassBookings sc ON m.MemberID = sc.MemberID
 GROUP BY Period
 ORDER BY Period ASC;
 ```
+The resulting dataset structure allows for the application of logistic regression to estimate the
+probability of churn among members. By monitoring changes in churn probability, the gym can
+implement strategies to improve retention and identify the top features influencing churn and their level of importance through the model’s coefficients, providing insight into customer behavior and highlighting the most crucial metrics to
+track: 
+
+<img src="sql_scripts/Output_RevenueRegression.jpg" alt="Output_RevenueRegression" width="80%" />
 
 **2. Churn Prediction Model:** A second master table was created to build a member-level profile, including demographics, tenure, payment history, and engagement metrics. This data can be used to train a logistic regression model to predict the likelihood of a member churning.  
 **Generated SQL:**
@@ -243,6 +249,12 @@ LEFT JOIN WorkoutPlanSummary wps ON md.MemberID = wps.MemberID
 LEFT JOIN ChurnStatus cs ON md.MemberID = cs.MemberID
 ;
 ```
+The output of this query provides a structured dataset, where Total Revenue serves as the
+dependent variable in the regression analysis. The remaining metrics, such as
+membership distribution, attendance, and special class bookings, act as independent
+variables to explain revenue variability: 
+
+![Output_Churn](sql_scripts/Output_Churn.jpg)
 
 ### Technologies & Methods Used
 - Database: MySQL
