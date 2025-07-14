@@ -30,37 +30,41 @@ Limited Data Insights: Without a structured database, gym owners struggle to ana
 The GMS is built on a structured relational database that ensures efficient data organization, retrieval, and management.
 ### ER Diagram
 The following Entity-Relationship diagram illustrates the database schema, including all tables and their relationships.
-(Action: Insert your ER Diagram image here. You can upload it to the repository and link it.)
-![ER Diagram](path/to/your/er_diagram.png)
+
+<img src="Diagram.jpg" alt="ER Diagram" width="50%" />
+
 ### Schema Overview
-The database consists of 15 interconnected tables designed to cover all core gym operations:
-Member Management: Members, Memberships, Payments, Attendance
-Trainer & Workout Plans: Trainers, WorkoutPlans, MemberWorkoutPlans
-Classes & Bookings: Rooms, SpecialClasses, SpecialClassBookings
-Equipment & Maintenance: Equipment, Staff, Maintenance
+The database consists of 13 interconnected tables designed to cover all core gym operations:
+- **Member Management:** Members, Memberships, Payments, Attendance
+- **Trainer & Workout Plans:** Trainers, WorkoutPlans, MemberWorkoutPlans
+- **Classes & Bookings:** Rooms, SpecialClasses, SpecialClassBookings
+- **Equipment & Maintenance:** Equipment, Staff, Maintenance
 
 ### Key Features & Analysis
 
 #### Data Integrity
 The schema is fortified with a variety of constraints to ensure data integrity and accuracy:
-Primary Keys & Foreign Keys to establish and enforce relationships.
-UNIQUE Constraints to prevent duplicate records, such as member emails or phone numbers.
-NOT NULL Constraints to ensure essential fields are always populated.
-CHECK Constraints to enforce business rules (e.g., ratings must be between 1 and 10).
-ENUM Constraints to restrict values to predefined options (e.g., membership status).
-ON DELETE CASCADE to maintain referential integrity when records are deleted.
+- **Primary Keys & Foreign Keys** to establish and enforce relationships.
+- **UNIQUE Constraints** to prevent duplicate records, such as member emails or phone numbers.
+- **NOT NULL Constraints** to ensure essential fields are always populated.
+- **CHECK Constraints** to enforce business rules (e.g., ratings must be between 1 and 10).
+- **ENUM Constraints** to restrict values to predefined options (e.g., membership status).
+- **ON DELETE CASCADE** to maintain referential integrity when records are deleted.
 
 #### Real-World Data Manipulation
 The project simulates several real-world business scenarios, demonstrating practical data manipulation skills:
-Imputing Missing Data: Corrected historical RegistrationDate records by using the earliest payment date for each member, ensuring data accuracy.
-Improving Performance: Added indexes on frequently searched columns (LastName, MemberID) to optimize query performance for front-desk lookups and analytical reports.
-Handling Privacy Requests: Implemented a process for deleting member data in compliance with privacy regulations like PIPEDA, using ON DELETE CASCADE to ensure all related records are removed.
-Schema Evolution: Used ALTER TABLE to modify column data types and add constraints as business requirements changed (e.g., accommodating international phone numbers).
+- **Imputing Missing Data:** Corrected historical *RegistrationDate* records by using the earliest payment date for each member, ensuring data accuracy.
+- **Improving Performance:** Added indexes on frequently searched columns (LastName, MemberID) to optimize query performance for front-desk lookups and analytical reports.
+- **Handling Privacy Requests:** Implemented a process for deleting member data in compliance with privacy regulations like PIPEDA, using *ON DELETE CASCADE* to ensure all related records are removed.
+- **Schema Evolution:** Used *ALTER TABLE* to modify column data types and add constraints as business requirements changed (e.g., accommodating international phone numbers).
+
 #### Business Intelligence Queries
 Advanced DQL statements were used to extract meaningful insights and answer key business questions.
-1. Analyze Monthly Revenue and Attendance Trends
-This query provides a combined view of financial performance and member engagement, helping management identify patterns and make strategic decisions.
-Generated sql
+**1. Analyze Monthly Revenue and Attendance Trends**
+This query provides a combined view of financial performance and member engagement, helping management identify patterns and make strategic decisions.  
+
+**Generated SQL:**
+```sql
 WITH REVENUE AS (
     SELECT
         DATE_FORMAT(PaymentDate, '%Y-%m') AS Month,
@@ -82,12 +86,13 @@ SELECT
 FROM REVENUE R
 JOIN Attendance A ON A.Month = R.Month
 ORDER BY R.Month;
-Use code with caution.
-SQL
-Business Value: By tracking revenue against attendance, the gym can assess the effectiveness of pricing plans, identify seasonal dips, and optimize staffing for peak hours.
-2. Identify Inactive Members for Retention Campaigns
-This query identifies members who have been absent for more than 30 days, enabling proactive outreach to prevent churn.
-Generated sql
+```
+**Business Value:** By tracking revenue against attendance, the gym can assess the effectiveness of pricing plans, identify seasonal dips, and optimize staffing for peak hours.
+
+**2. Identify Inactive Members for Retention Campaigns**
+This query identifies members who have been absent for more than 30 days, enabling proactive outreach to prevent churn.  
+**Generated SQL:**
+```sql
 SELECT
     m.MemberID,
     m.FirstName,
